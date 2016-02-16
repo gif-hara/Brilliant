@@ -15,17 +15,17 @@ namespace Brilliant
 		[SerializeField]
 		private Text text;
 
-		public static InformationText Instance{ private set; get; }
+		private static InformationText instance;
 
 		void Awake()
 		{
-			Assert.IsNull(Instance, "InformationTextはシングルトンです.");
-			Instance = this;
+			Assert.IsNull(instance, "InformationTextはシングルトンです.");
+			instance = this;
 		}
 
 		public static void Add(string message)
 		{
-			Instance.text.text = message + System.Environment.NewLine + Instance.text.text;
+			instance.text.text = message + System.Environment.NewLine + instance.text.text;
 		}
 	}
 }
