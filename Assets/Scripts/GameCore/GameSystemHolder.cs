@@ -8,21 +8,13 @@ namespace Brilliant
 	/// <summary>
 	/// ゲームシステムを格納しているゲームオブジェクトを保持するコンポーネント.
 	/// </summary>
-	public class GameSystemHolder : MonoBehaviour
+	public class GameSystemHolder : SingletonMonoBehaviour<GameSystemHolder>
 	{
-		private static GameSystemHolder instance;
-
 		[SerializeField]
 		private List<GameObject> systems;
 
 		[SerializeField]
 		private GameObject initializeSystem;
-
-		void Awake()
-		{
-			Assert.IsNull(instance, "GameSystemHolderはシングルトンです.");
-			instance = this;
-		}
 
 		void Start()
 		{
