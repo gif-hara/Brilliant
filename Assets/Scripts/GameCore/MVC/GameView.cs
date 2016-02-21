@@ -8,7 +8,7 @@ namespace Brilliant
 	/// <summary>
 	/// Viewを保持するコンポーネント.
 	/// </summary>
-	public class ViewHolder : SingletonMonoBehaviour<ViewHolder>
+	public class GameView : SingletonMonoBehaviour<GameView>
 	{
 		public static GameObject Image{ get{ return Instance.image; } }
 		[SerializeField]

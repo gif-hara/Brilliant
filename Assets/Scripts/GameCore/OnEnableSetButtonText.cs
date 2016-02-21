@@ -6,9 +6,9 @@ using System.Collections.Generic;
 namespace Brilliant
 {
 	/// <summary>
-	/// BrilliantButtonのボタンテキストを設定するコンポーネント.
+	/// OnEnableのタイミングでBrilliantButtonのボタンテキストを設定するコンポーネント.
 	/// </summary>
-	public class SetButtonText : MonoBehaviour
+	public class OnEnableSetButtonText : MonoBehaviour
 	{
 		[SerializeField]
 		private GameDefine.ButtonType buttonType;
@@ -18,7 +18,7 @@ namespace Brilliant
 
 		void OnEnable()
 		{
-			Buttons.Get(this.buttonType).SetText(this.text);
+			GameController.Get(this.buttonType).SetText(this.text);
 		}
 			
 	}

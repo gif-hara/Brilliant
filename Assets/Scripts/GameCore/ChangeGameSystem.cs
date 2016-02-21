@@ -18,7 +18,7 @@ namespace Brilliant
 
 		public void Change()
 		{
-			GameSystemHolder.Change(this.systemObject, this.addHistory);
+			GameModel.Change(this.systemObject, this.addHistory);
 		}
 	}
 }

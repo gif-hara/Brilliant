@@ -12,7 +12,7 @@ namespace Brilliant
 	{
 		void OnEnable()
 		{
-			Buttons.List.ForEach(b => b.EventTrigger.triggers.RemoveAll(i => true));
+			GameController.List.ForEach(b => b.EventTrigger.triggers.RemoveAll(i => true));
 		}
 	}
 }

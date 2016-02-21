@@ -6,9 +6,9 @@ using System.Collections.Generic;
 namespace Brilliant
 {
 	/// <summary>
-	/// ゲームシステムを格納しているゲームオブジェクトを保持するコンポーネント.
+	/// ゲームシステム部分を制御しているオブジェクトを格納するコンポーネント.
 	/// </summary>
-	public class GameSystemHolder : SingletonMonoBehaviour<GameSystemHolder>
+	public class GameModel : SingletonMonoBehaviour<GameModel>
 	{
 		[SerializeField]
 		private List<GameObject> systems;

@@ -26,7 +26,7 @@ namespace Brilliant
 			entry.eventID = this.triggerType;
 			entry.callback = new EventTrigger.TriggerEvent();
 			entry.callback.AddListener(new UnityAction<BaseEventData>((b) => this.otherEvent.Invoke()));
-			Buttons.Get(this.buttonType).EventTrigger.triggers.Add(entry);
+			GameController.Get(this.buttonType).EventTrigger.triggers.Add(entry);
 		}
 	}
 }

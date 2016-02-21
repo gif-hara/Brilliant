@@ -15,7 +15,7 @@ namespace Brilliant
 
 		void OnEnable()
 		{
-			ViewHolder.Change(this.viewType);
+			GameView.Change(this.viewType);
 		}
 	}
 }

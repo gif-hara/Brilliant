@@ -15,13 +15,13 @@ namespace Brilliant
 
 		public void Change()
 		{
-			var poppedSystem = GameSystemHolder.Instance.History.Pop;
+			var poppedSystem = GameModel.Instance.History.Pop;
 			if(poppedSystem == null)
 			{
 				poppedSystem = exceptionSystemObject;
 			}
 
-			GameSystemHolder.Change(poppedSystem, false);
+			GameModel.Change(poppedSystem, false);
 		}
 	}
 }

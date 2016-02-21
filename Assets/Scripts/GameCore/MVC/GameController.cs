@@ -8,9 +8,9 @@ namespace Brilliant
 	/// <summary>
 	/// このゲームのボタン類を制御するコンポーネント.
 	/// </summary>
-	public class Buttons : MonoBehaviour
+	public class GameController : MonoBehaviour
 	{
-		private static Buttons instance;
+		private static GameController instance;
 
 		public static BrilliantButton Left{ get{ return instance.left; } }
 		[SerializeField]
