@@ -20,6 +20,9 @@ namespace Brilliant
 		[SerializeField]
 		private string focusText;
 
+		[SerializeField]
+		private Color32 focusColor;
+
 		public void OnModifiedIndex(int index)
 		{
 			string result = "";
@@ -27,10 +30,18 @@ namespace Brilliant
 			{
 				if(i == index)
 				{
+					result += "<color=#" + this.focusColor.ToHex() + ">";
 					result += this.focusText;
 				}
 
-				result += this.messages[i] + System.Environment.NewLine;
+				result += this.messages[i];
+
+				if(i == index)
+				{
+					result += "</color>";
+				}
+
+				result += System.Environment.NewLine;
 			}
 
 			this.text.text = result;

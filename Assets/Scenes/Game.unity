@@ -2258,6 +2258,9 @@ MonoBehaviour:
   - "\u30B9\u30C6\u30FC\u30BF\u30B9"
   - "\u623B\u308B"
   focusText: "\uFF1E"
+  focusColor:
+    serializedVersion: 2
+    rgba: 4278190335
 --- !u!4 &1051545305
 Transform:
   m_ObjectHideFlags: 0
