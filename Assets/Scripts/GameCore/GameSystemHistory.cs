@@ -23,6 +23,12 @@ namespace Brilliant
 			this.history.Add(systemObject);
 		}
 
+		public void ToRoot(GameObject systemObject)
+		{
+			this.history.RemoveAll(h => true);
+			this.Add(systemObject);
+		}
+
 		public GameObject Pop
 		{
 			get
