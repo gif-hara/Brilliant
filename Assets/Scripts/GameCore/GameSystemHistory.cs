@@ -8,6 +8,7 @@ namespace Brilliant
 	/// <summary>
 	/// GameSystemのアクセス履歴を保持する.
 	/// </summary>
+	[System.Serializable]
 	public class GameSystemHistory
 	{
 		private List<GameObject> history;
@@ -28,6 +29,7 @@ namespace Brilliant
 			{
 				if(this.history.Count <= 1)
 				{
+					Assert.IsTrue(false, "履歴が無いのにアクセスしました.");
 					return null;
 				}
 

@@ -10,10 +10,17 @@ namespace Brilliant
 	/// </summary>
 	public class ChangeGameSystemFromHistory : MonoBehaviour
 	{
+		[SerializeField]
+		private GameObject exceptionSystemObject;
+
 		public void Change()
 		{
 			var poppedSystem = GameSystemHolder.Instance.History.Pop;
-			Assert.IsNotNull(poppedSystem);
+			if(poppedSystem == null)
+			{
+				poppedSystem = exceptionSystemObject;
+			}
+
 			GameSystemHolder.Change(poppedSystem, false);
 		}
 	}
