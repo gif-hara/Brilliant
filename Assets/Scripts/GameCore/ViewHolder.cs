@@ -22,7 +22,7 @@ namespace Brilliant
 
 		private List<GameObject> systems = new List<GameObject>();
 
-		void Awake()
+		protected override void Awake()
 		{
 			base.Awake();
 			this.systems.Add(this.image);

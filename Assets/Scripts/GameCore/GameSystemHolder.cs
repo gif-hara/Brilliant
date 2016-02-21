@@ -20,7 +20,7 @@ namespace Brilliant
 
 		public GameSystemHistory History{ private set; get; }
 
-		void Awake()
+		protected override  void Awake()
 		{
 			base.Awake();
 			this.History = new GameSystemHistory();
