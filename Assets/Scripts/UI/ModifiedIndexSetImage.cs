@@ -16,7 +16,7 @@ namespace Brilliant
 
 		public void OnModifiedIndex(int index)
 		{
-			ViewHolder.ChangeToImage();
+			ViewHolder.Change(GameDefine.ViewType.Image);
 			var image = ViewHolder.Image;
 			image.GetComponent<Image>().sprite = this.sprites[index];
 		}

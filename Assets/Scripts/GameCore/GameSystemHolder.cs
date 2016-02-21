@@ -16,15 +16,36 @@ namespace Brilliant
 		[SerializeField]
 		private GameObject initializeSystem;
 
-		void Start()
+		private GameObject currentSystem = null;
+
+		public GameSystemHistory History{ private set; get; }
+
+		void Awake()
 		{
-			this.Change(this.initializeSystem);
+			base.Awake();
+			this.History = new GameSystemHistory();
 		}
 
-		public static void Change(GameObject systemObject)
+		void Start()
 		{
-			instance.systems.ForEach((s) => s.SetActive(false));
-			systemObject.SetActive(true);
+			this.systems.ForEach(s => s.SetActive(false));
+			this.Change(this.initializeSystem, true);
+		}
+			
+		public static void Change(GameObject systemObject, bool addHistory)
+		{
+			if(Instance.currentSystem != null)
+			{
+				Instance.currentSystem.SetActive(false);
+			}
+
+			Instance.currentSystem = systemObject;
+			Instance.currentSystem.SetActive(true);
+
+			if(addHistory)
+			{
+				Instance.History.Add(systemObject);
+			}
 		}
 	}
 }

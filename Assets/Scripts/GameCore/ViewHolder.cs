@@ -18,11 +18,20 @@ namespace Brilliant
 		[SerializeField]
 		private GameObject mainMenu;
 
-		private GameObject currentView;
+		private GameObject currentView = null;
 
-		public static void ChangeToImage()
+		private List<GameObject> systems = new List<GameObject>();
+
+		void Awake()
 		{
-			Instance.SetCurrentView(Instance.image);
+			base.Awake();
+			this.systems.Add(this.image);
+			this.systems.Add(this.mainMenu);
+		}
+
+		public static void Change(GameDefine.ViewType viewType)
+		{
+			Instance.SetCurrentView(Instance.systems[(int)viewType]);
 		}
 
 		private void SetCurrentView(GameObject view)

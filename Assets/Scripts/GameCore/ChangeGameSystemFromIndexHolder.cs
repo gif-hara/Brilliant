@@ -16,9 +16,12 @@ namespace Brilliant
 		[SerializeField]
 		private List<GameObject> systemObjects;
 
+		[SerializeField]
+		private bool addHistory;
+
 		public void Change()
 		{
-			GameSystemHolder.Change(this.systemObjects[this.indexHolder.Index]);
+			GameSystemHolder.Change(this.systemObjects[this.indexHolder.Index], this.addHistory);
 		}
 	}
 }

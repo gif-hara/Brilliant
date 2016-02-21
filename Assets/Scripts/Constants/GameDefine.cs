@@ -18,5 +18,11 @@ namespace Brilliant
 			Decide,
 			Cancel,
 		}
+
+		public enum ViewType : int
+		{
+			Image,
+			MainMenu,
+		}
 	}
 }
